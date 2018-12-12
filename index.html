@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>puzzledsky</title>
-</head>
-<body>
-	<h1>
-		under coding...
-	</h1>
-</body>
+  <head>
+    <title>puzzledsky</title>
+  </head>
+  <body>
+    <h1>under coding...</h1>
+    <div id="things" style="padding-left:20px"></div>
+    <script>
+      var xhrhttp = new XMLHttpRequest();
+      var things = document.getElementById("things");
+      xhrhttp.onreadystatechange = function() {
+        if (xhrhttp.readyState == 4 && xhrhttp.status == 200) {
+          things.innerHTML = "";
+          var list = JSON.parse(xhrhttp.responseText);
+          list.forEach(element => {
+            things.innerHTML += "<p>" + element + "</p>";
+          });
+        }
+      };
+	  xhrhttp.open('GET','https://puzzledsky.cn/test/get.php',true);
+	  xhrhttp.send();
+    </script>
+  </body>
 </html>
