@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="clock.css">
+    <title>FINAL FANTASY XIV:ShadowBringers</title>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div id="top-img">
+            <img src="./imgs/shadowbringers.png" />
+        </div>
+
+        <div id="timer-text">
+            {{timerText}}
+        </div>
+
+        <div id="countdown-text">
+            <span class="time-number">{{remain_time.day}}</span>
+            <span class="time-text">{{daysText}}</span>
+
+            <span class="time-number">{{remain_time.hour}}</span>
+            <span class="time-text">{{hoursText}}</span>
+
+            <span class="time-number">{{remain_time.minute}}</span>
+            <span class="time-text">{{minutesText}}</span>
+
+            <span class="time-number">{{remain_time.second}}</span>
+            <span class="time-text">{{secondsText}}</span>
+        </div>
+
+        <div id="countdown-text-mobile">
+            <div>
+                <span class="time-number">{{remain_time.day}}</span>
+                <span class="time-text">{{daysText}}</span>
+
+                <span class="time-number">{{remain_time.hour}}</span>
+                <span class="time-text">{{hoursText}}</span>
+            </div>
+
+            <div>
+                <span class="time-number">{{remain_time.minute}}</span>
+                <span class="time-text">{{minutesText}}</span>
+
+                <span class="time-number">{{remain_time.second}}</span>
+                <span class="time-text">{{secondsText}}</span>
+            </div>
+
+        </div>
+
+        <div id="join-button">
+            <span class="button" v-on:click="on_join_click()">
+                {{joinText}}
+            </span>
+        </div>
+
+        <div id="footer">
+            <div class="button" v-on:click="on_update_language(0)">CN</div>
+            <div class="button" v-on:click="on_update_language(1)">EN</div>
+        </div>
+    </div>
+
+    <!-- building -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- product -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="clock.js"></script>
+</body>
+
+</html>
