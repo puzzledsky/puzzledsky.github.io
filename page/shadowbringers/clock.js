@@ -17,7 +17,7 @@ var app = new Vue({
             seconds: ['秒', 'Seconds'],
             join: ['现在加入', 'JOIN NOW']
         },
-        target_date: '2019-10-15 14:00:00'
+        target_date: '2019-10-15 16:00:00'
     },
     created() {
         this.init();
