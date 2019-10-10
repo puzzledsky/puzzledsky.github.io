@@ -1,5 +1,8 @@
 var app = new Vue({
     el: '#app',
+    modules: {
+        moment
+    },
     data: {
         language: 0, //0:Chinese,other: English
         ended: false,
@@ -17,7 +20,8 @@ var app = new Vue({
             seconds: ['秒', 'Seconds'],
             join: ['现在加入', 'JOIN NOW']
         },
-        target_date: '2019-10-15 16:00:00'
+        // target_date: '2019-10-15 16:00:00'
+        target_date_seconds: 1571126400000
     },
     created() {
         this.init();
@@ -46,20 +50,21 @@ var app = new Vue({
     methods: {
         init: function () {
             this.on_update_language(0);
-            
+
         },
         update_per_second: function () {
             setInterval(() => {
-                let now = new Date().getTime();
-                let target = new Date(this.target_date).getTime();
-                if (now > target) {
+                let now = moment(new Date());
+                // let target = moment(this.target_date).valueOf();
+                // console.log(target);
+                //1571126400000
+                let s = parseInt((this.target_date_seconds-now.valueOf())/1000);
+                if (s <= 0) {
                     this.ended = true;
                     return;
                 }
 
                 let r = this.remain_time;
-                let s = parseInt((target - now) / 1000);
-
                 r.day = parseInt(s / (60 * 60 * 24));
                 s -= r.day * (60 * 60 * 24);
                 r.hour = parseInt(s / (60 * 60));
@@ -70,10 +75,10 @@ var app = new Vue({
         },
         on_update_language: function (language) {
             this.language = language;
-            document.title = this.language == 0 ? "最终幻想14：暗影之逆焰" :"FINAL FANTASY XIV:ShadowBringers"
+            document.title = this.language == 0 ? "最终幻想14：暗影之逆焰" : "FINAL FANTASY XIV:ShadowBringers"
         },
         on_join_click: function () {
-            if(this.language==0)
+            if (this.language == 0)
                 window.open("http://ff.sdo.com/web8/index.html")
             else
                 window.open("https://na.finalfantasyxiv.com/shadowbringers/")
