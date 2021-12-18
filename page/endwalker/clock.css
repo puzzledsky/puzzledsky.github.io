@@ -1,0 +1,131 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: black;
+    min-width: 200px;
+}
+
+.button {
+    border: 0.02em solid white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: linear-gradient(
+        to right,
+        #4c5fbf 0%,
+        #44aadf 50%,
+        #ff9933 100%
+    );
+}
+
+#footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    text-align: right;
+}
+
+#footer div {
+    margin: 7px 5px;
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+}
+
+/* top-img */
+#top-img {
+    display: bolder-box;
+    max-width: 50%;
+    padding: 30px 0px 0px 0px;
+    margin: auto;
+}
+
+#top-img img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background: black;
+}
+
+#timer-text {
+    width: 100%;
+    text-align: center;
+    color: #f1e182;
+    font-size: 1.5em;
+}
+
+#countdown-text {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 5px 0px;
+}
+
+#countdown-text-mobile {
+    display: none;
+}
+
+.time-number {
+    color: #f1e182;
+    padding-left: 0.2em;
+    padding-right: 2px;
+    font-size: 3.5em;
+}
+.time-text {
+    color: #f1e182;
+    font-size: 1em;
+}
+
+#join-button {
+    margin-top: 30px;
+    text-align: center;
+}
+#join-button span {
+    color: white;
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+/* adjust */
+@media only screen and (max-width: 1200px) {
+    #top-img {
+        max-width: 70%;
+    }
+}
+@media only screen and (max-width: 520px) {
+    #top-img {
+        padding-top: 60px;
+        max-width: 100%;
+    }
+    #timer-text {
+        padding: 20px 0;
+    }
+    #countdown-text {
+        display: none;
+    }
+    #countdown-text-mobile {
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 5px 0px;
+    }
+    .time-number {
+        font-size: 2.3em;
+    }
+    .time-text {
+        font-size: 1em;
+    }
+    #footer {
+        padding: 5px;
+    }
+}
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    font-style: inherit;
+}
