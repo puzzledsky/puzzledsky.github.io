@@ -21,7 +21,7 @@ var app = new Vue({
             join: ['现 在 加 入', 'JOIN NOW']
         },
         // target_date: '2022-3-16 16:00:00',
-        target_date_seconds: 1647417600000
+        target_date_seconds: 1647396000000
     },
     created() {
         this.init();
